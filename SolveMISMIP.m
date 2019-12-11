@@ -113,9 +113,9 @@ function [surf, bed] = SolveMISMIP(A, N, L, type)
 
 %     figure
 
-    plot(X_soln,-SMcold_bedheight(X_soln, type),'k')
-    hold on
-    plot(X_soln,S_soln,'b')
+%     plot(X_soln,-SMcold_bedheight(X_soln, type),'k')
+%     hold on
+%     plot(X_soln,S_soln,'b')
 
     %H_soln is now rearranged and the point
     %corresponding to the grounding line location is expunged to input these data into your
@@ -139,9 +139,9 @@ function [surf, bed] = SolveMISMIP(A, N, L, type)
 
     H_soln2 = h_f*(q_0 + a*(floating-x))./(q_0^(n+1) + h_f^(n+1)*((1-r)*rho_g/4)^n*A*((q_0 + a*(floating-x)).^(n+1) - q_0^(n+1))/a).^(1/(n+1));
 
-    plot([x; floating],(1-r)*[h_f; H_soln2],'b');
-
-    plot([x; floating],-r*[h_f; H_soln2],'b');
+%     plot([x; floating],(1-r)*[h_f; H_soln2],'b');
+% 
+%     plot([x; floating],-r*[h_f; H_soln2],'b');
 
     surf=[surf(end:-1:2,:);[floating,(1-r)*H_soln2]];
 
