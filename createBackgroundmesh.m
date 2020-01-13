@@ -43,5 +43,18 @@ plot(surf(:,1), surf(:,2),'r', 'LineWidth',2)
 plot(bed(:,1), bed(:,2),'r', 'LineWidth',2)
 
 %% Get the edges
+%1. A matrix Edge_Node which is of size 2xnrofedges: (nodnr1; nodnr2, edge) 
+%   containing the numbers of the two nodes that define each edge, the
+%   column index of the matrix is the corresponding index of the edge.
 
-[Edge_Node, Edges, Edge_Element] = getEdges(elements);
+% 2. A matrix Edges size 3xnrofelements which gives (edgenr1; edgenr2; egenr3, element)
+%    so you would have access to the three edges each element have. The
+%    column index of the matrix is the corresponding index of the element 
+%    defined as in 'elements'
+ 
+% 3. A matrix Edge_Element of size 3xnrofedges: (el1; el2; edgenr)
+%    so for each edge you would know the two elements that share that edge. 
+
+[Edge_Node, Edges, Edge_Element, Boundary] = getEdges(elements);
+
+% Additionally, Boundary contains the index of the boundary edges.
