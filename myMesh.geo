@@ -33,7 +33,7 @@ Plane Surface(12) = {10};
 
 
 Field[1] = Box;
-Field[1].VIn = lc / 5;
+Field[1].VIn = lc / 10;
 Field[1].VOut = lc;
 Field[1].XMin = subx; 
 Field[1].XMax = Lx;
